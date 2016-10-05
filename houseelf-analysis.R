@@ -3,4 +3,4 @@
 
 # ---------- Problem 3 ----------
 # 3 Import data into R
-read.csv("./data/houseelf_earlength_dna_data.csv")
+read.csv("./data/houseelf_earlength_dna_data_1.csv")
