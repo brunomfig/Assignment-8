@@ -16,3 +16,13 @@ gc_content <- function(dnaseq) {
   return(gc)}
 
 gc_content(elf_1$dnaseq)
+
+# ---------- Problem 7 ----------
+# 1 Pull the new function from github
+get_size_class <- function(ear_length){
+  # Calculate the size class for one or more earth lengths
+  ear_lengths <- ifelse(ear_length > 10, "large", "small")
+  return(ear_lengths)
+}
+
+# 4 Creat a data frame wih IDs, ear class and gc content
