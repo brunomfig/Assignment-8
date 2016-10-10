@@ -26,3 +26,21 @@ get_size_class <- function(ear_length){
 }
 
 # 4 Creat a data frame wih IDs, ear class and gc content
+elf_table <- data.frame(elf_1$id, ear_size = NA, gc_content = NA)
+
+for (x in 1:length(elf_1$earlength)) {
+  if (elf_1$earlength[x] > 10) {elf_table$ear_size[x] <- "LARGE"} else {elf_table$ear_size[x] <- "SMALL"}}
+
+gc_content <- function(elf) {
+  t <- str_length(elf)
+  g <- str_count(elf, "g")
+  c <- str_count(elf, "c")
+  gc <- round((g + c) / t * 100, 2)}
+
+for (x in 1:length(elf_1$dnaseq)) {
+  lower <- tolower(elf_1$dnaseq)
+  elf_table$gc_content[x] <- gc_content(lower[x])}
+
+print(elf_table)
+
+write.csv(elf_table, file = "houseelf-analysis.csv")
